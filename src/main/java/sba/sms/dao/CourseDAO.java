@@ -1,18 +1,17 @@
-package sba.sms.services;
+package sba.sms.dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import sba.sms.dao.CourseI;
-import sba.sms.models.Course;
+import sba.sms.entity.Course;
 import sba.sms.utils.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class CourseService implements CourseI {
+public class CourseDAO implements CourseInterface {
     @Override
     public void createCourse(Course course) {
         Session s = HibernateUtil.getSessionFactory().openSession();

@@ -1,4 +1,4 @@
-package sba.sms.models;
+package sba.sms.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,35 +11,37 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Setter@Getter@ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Setter
+@Getter
+@ToString
 @Table(name = "student")
 @Entity
 public class Student {
+
     @NonNull
-    @Id @Column(length = 50,name = "email")
-    String email;
+    @Id
+    @Column(length = 50, name = "email")
+    private String email;
+
     @NonNull
     @Column(length = 50, nullable = false, name = "name")
-    String name;
+    private String name;
+
     @NonNull
-    @Column(length = 50,name = "password")
-    String password;
+    @Column(length = 50, name = "password")
+    private String password;
 
     @ToString.Exclude
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
     @JoinTable(name = "student_courses",
             joinColumns = @JoinColumn(name = "student_email"),
             inverseJoinColumns = @JoinColumn(name = "courses_id"))
-    Set<Course> courses = new LinkedHashSet<>();
+    private Set<Course> courses = new LinkedHashSet<>();
 
-    public void addCourse(Course c){
+    public void addCourse(Course c) {
         courses.add(c);
         c.getStudents().add(this);
-
-
     }
-
 
     @Override
     public boolean equals(Object o) {

@@ -1,9 +1,9 @@
 package sba.sms.utils;
 
-import sba.sms.models.Course;
-import sba.sms.models.Student;
-import sba.sms.services.CourseService;
-import sba.sms.services.StudentService;
+import sba.sms.entity.Course;
+import sba.sms.entity.Student;
+import sba.sms.dao.CourseDAO;
+import sba.sms.dao.StudentDAO;
 
 public class CommandLine {
     private CommandLine(){
@@ -13,20 +13,20 @@ public class CommandLine {
 
 
     public static void addData(){
-        StudentService studentService = new StudentService();
-        CourseService courseService = new CourseService();
+        StudentDAO studentDAO = new StudentDAO();
+        CourseDAO courseDAO = new CourseDAO();
         String instructorPhillip = "Phillip Witkin";
-        studentService.createStudent(new Student("reema@gmail.com", "reema brown", PASSWORD));
-        studentService.createStudent(new Student("annette@gmail.com", "annette allen", PASSWORD));
-        studentService.createStudent(new Student("anthony@gmail.com", "anthony gallegos", PASSWORD));
-        studentService.createStudent(new Student("ariadna@gmail.com", "ariadna ramirez", PASSWORD));
-        studentService.createStudent(new Student("bolaji@gmail.com", "bolaji saibu", PASSWORD));
+        studentDAO.createStudent(new Student("reema@gmail.com", "reema brown", PASSWORD));
+        studentDAO.createStudent(new Student("annette@gmail.com", "annette allen", PASSWORD));
+        studentDAO.createStudent(new Student("anthony@gmail.com", "anthony gallegos", PASSWORD));
+        studentDAO.createStudent(new Student("ariadna@gmail.com", "ariadna ramirez", PASSWORD));
+        studentDAO.createStudent(new Student("bolaji@gmail.com", "bolaji saibu", PASSWORD));
 
-        courseService.createCourse(new Course("Java", instructorPhillip));
-        courseService.createCourse(new Course("Frontend", "Kasper Kain"));
-        courseService.createCourse(new Course("JPA", "Jafer Alhaboubi"));
-        courseService.createCourse(new Course("Spring Framework", instructorPhillip));
-        courseService.createCourse(new Course("SQL", instructorPhillip));
+        courseDAO.createCourse(new Course("Java", instructorPhillip));
+        courseDAO.createCourse(new Course("Frontend", "Kasper Kain"));
+        courseDAO.createCourse(new Course("JPA", "Jafer Alhaboubi"));
+        courseDAO.createCourse(new Course("Spring Framework", instructorPhillip));
+        courseDAO.createCourse(new Course("SQL", instructorPhillip));
 
 
     }

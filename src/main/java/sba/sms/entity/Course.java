@@ -1,4 +1,4 @@
-package sba.sms.models;
+package sba.sms.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,27 +8,32 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@NoArgsConstructor
+
 @AllArgsConstructor
+@NoArgsConstructor
 @RequiredArgsConstructor
 @Setter
 @Getter
 @ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "course")
 @Entity
+@Table(name = "course")
 public class Course {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "id")
-    int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
     @NonNull
     @Column(length = 50, name = "name")
-    String name;
+    private String name;
+
     @NonNull
-    @Column(length = 50, name="instructor")
-    String instructor;
+    @Column(length = 50, name = "instructor")
+    private String instructor;
 
     @ToString.Exclude
-    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH},fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
     private Set<Student> students = new LinkedHashSet<>();
 
     @Override

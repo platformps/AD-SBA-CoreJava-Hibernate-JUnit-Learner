@@ -1,11 +1,11 @@
 package sba.sms.dao;
 
-import sba.sms.models.Course;
-import sba.sms.models.Student;
+import sba.sms.entity.Course;
+import sba.sms.entity.Student;
 
 import java.util.List;
 
-public interface StudentI {
+public interface StudentInterface {
     List<Student> getAllStudents();
     void createStudent(Student student);
 

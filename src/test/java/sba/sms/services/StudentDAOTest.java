@@ -4,7 +4,8 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import sba.sms.models.Student;
+import sba.sms.dao.StudentDAO;
+import sba.sms.entity.Student;
 import sba.sms.utils.CommandLine;
 
 import java.util.ArrayList;
@@ -14,13 +15,13 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
-class StudentServiceTest {
+class StudentDAOTest {
 
-    static StudentService studentService;
+    static StudentDAO studentDAO;
 
     @BeforeAll
     static void beforeAll() {
-        studentService = new StudentService();
+        studentDAO = new StudentDAO();
         CommandLine.addData();
     }
 
@@ -35,7 +36,7 @@ class StudentServiceTest {
                 new Student("bolaji@gmail.com", "bolaji saibu", "password")
         ));
 
-        assertThat(studentService.getAllStudents()).hasSameElementsAs(expected);
+        assertThat(studentDAO.getAllStudents()).hasSameElementsAs(expected);
 
     }
 }
