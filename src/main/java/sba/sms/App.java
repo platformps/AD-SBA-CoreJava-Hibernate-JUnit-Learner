@@ -1,10 +1,10 @@
 package sba.sms;
 
 import lombok.extern.java.Log;
-import sba.sms.entity.Course;
-import sba.sms.entity.Student;
-import sba.sms.dao.CourseDAO;
-import sba.sms.dao.StudentDAO;
+import sba.sms.models.Course;
+import sba.sms.models.Student;
+import sba.sms.services.CourseService;
+import sba.sms.services.StudentService;
 import sba.sms.utils.CommandLine;
 
 import java.util.List;
@@ -16,26 +16,20 @@ import java.util.Scanner;
  * task is to create a basic School Management System
  * where students can register for courses, and view the course assigned to them.
  *<br />
- * Main uses <br />
+ * App uses <br />
  * Initialize dummy data: {@link CommandLine#addData()} <br />
  * Two models: {@link Student} & {@link Course} <br />
- * Two services: {@link StudentDAO} & {@link CourseDAO}
+ * Two services: {@link StudentService} & {@link CourseService}
  *
  * @author  Jafer Alhaboubi
  * @since sba-core-java-hibernate-junit 1.0
  */
 @Log
-public class Main {
-
-    private StudentDAO studentDao = new StudentDAO();
-    private CourseDAO courseDao = new CourseDAO();
+public class App {
+    static final  StudentService studentService = new StudentService();
+    static final  CourseService courseService = new CourseService();
 
     public static void main(String[] args) {
-        Main main = new Main();
-        main.run();
-    }
-
-    public void run() {
 
         CommandLine.addData();
 
@@ -49,14 +43,14 @@ public class Main {
                 String email = input.next();
                 System.out.printf("Enter %s's password: ", email.substring(0, email.indexOf("@")));
                 String password = input.next();
-                if (studentDao.validateStudent(email, password)) {
+                if (studentService.validateStudent(email, password)) {
                     printStudentCourses(email);
-                    System.out.printf("select # from menu: %n1.Register %s to class: %n2.Logout%n", studentDao.getStudentByEmail(email).getName());
+                    System.out.printf("select # from menu: %n1.Register %s to class: %n2.Logout%n", studentService.getStudentByEmail(email).getName());
                     userInput = input.nextInt();
                     if (userInput == 2) {
                         System.exit(0);
                     } else {
-                        List<Course> courseList = courseDao.getAllCourses();
+                        List<Course> courseList = courseService.getAllCourses();
                         System.out.printf("All courses:%n-----------------------------%n");
                         System.out.printf("%-2s | %-20s | %s%n", "ID", "Course", "Instructor");
                         if (courseList.isEmpty()) System.out.printf("No courses to view%n");
@@ -66,8 +60,8 @@ public class Main {
                         System.out.printf("select course #: ");
                         int courseId = input.nextInt();
                         if (courseId > 0 && courseId <= courseList.size()) {
-                            studentDao.registerStudentToCourse(email, (courseId));
-                            System.out.printf("successfully register %s to %s%n", studentDao.getStudentByEmail(email).getName(), courseDao.getCourseById(courseId).getName());
+                            studentService.registerStudentToCourse(email, (courseId));
+                            System.out.printf("successfully register %s to %s%n", studentService.getStudentByEmail(email).getName(), courseService.getCourseById(courseId).getName());
                             printStudentCourses(email);
                         } else {
                             System.out.printf("course id not found!%n");
@@ -82,10 +76,10 @@ public class Main {
         input.close();
     }
 
-    private void printStudentCourses(String email) {
+    private static void printStudentCourses(String email) {
         System.out.printf("%s courses:%n-----------------------------%n", email);
         System.out.printf("%-2s | %-20s | %s%n", "ID", "Course", "Instructor");
-        List<Course> userCourses = studentDao.getStudentCourses(email);
+        List<Course> userCourses = studentService.getStudentCourses(email);
         if (userCourses.isEmpty()) System.out.printf("No courses to view%n");
         for (Course course : userCourses) {
             System.out.printf("%-2d | %-20s | %s%n", course.getId(), course.getName(), course.getInstructor());

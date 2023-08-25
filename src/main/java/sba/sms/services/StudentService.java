@@ -1,4 +1,4 @@
-package sba.sms.dao;
+package sba.sms.services;
 
 import lombok.extern.java.Log;
 import org.hibernate.HibernateException;
@@ -6,16 +6,17 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
-import sba.sms.entity.Course;
-import sba.sms.entity.Student;
+import sba.sms.dao.StudentI;
+import sba.sms.models.Course;
+import sba.sms.models.Student;
 import sba.sms.utils.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Log
-public class StudentDAO implements StudentInterface {
-    private static final CourseDAO COURSE_DAO = new CourseDAO();
+public class StudentService implements StudentI {
+    private static final CourseService courseService = new CourseService();
 
     @Override
     public List<Student> getAllStudents() {
@@ -90,7 +91,7 @@ public class StudentDAO implements StudentInterface {
         try {
             tx = s.beginTransaction();
             Student student = getStudentByEmail(email);
-            student.addCourse(COURSE_DAO.getCourseById(courseId));
+            student.addCourse(courseService.getCourseById(courseId));
             s.merge(student);
             tx.commit();
         } catch (HibernateException exception) {
