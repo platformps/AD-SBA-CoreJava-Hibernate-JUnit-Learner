@@ -14,7 +14,7 @@ long as they are not already registered.
 
 ### Maven Project Requirements:
 
-- [Amazon Corretto 11 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html) 
+- [Amazon Corretto 17 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) 
 - [Hibernate](https://mvnrepository.com/artifact/org.hibernate/hibernate-core) 
 - [MariaDB](https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client)
 - [H2 database - tests](https://mvnrepository.com/artifact/com.h2database/h2)
