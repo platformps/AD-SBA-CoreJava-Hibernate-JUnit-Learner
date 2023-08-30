@@ -16,6 +16,7 @@ long as they are not already registered.
 
 - [Amazon Corretto 17 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) 
 - [Hibernate](https://mvnrepository.com/artifact/org.hibernate/hibernate-core)
+- [MySQL Connector Java](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.31)
 - [H2 database - tests](https://mvnrepository.com/artifact/com.h2database/h2)
 - [Project lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
 - [Junit jupiter api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)

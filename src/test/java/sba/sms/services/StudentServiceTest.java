@@ -21,7 +21,7 @@ class StudentServiceTest {
     @BeforeAll
     static void beforeAll() {
         studentService = new StudentService();
-        CommandLine.addData();
+      //  CommandLine.addData();
     }
 
     @Test
@@ -32,7 +32,9 @@ class StudentServiceTest {
                 new Student("annette@gmail.com", "annette allen", "password"),
                 new Student("anthony@gmail.com", "anthony gallegos", "password"),
                 new Student("ariadna@gmail.com", "ariadna ramirez", "password"),
-                new Student("bolaji@gmail.com", "bolaji saibu", "password")
+                new Student("bolaji@gmail.com", "bolaji saibu", "password"),
+                new Student("shirese@gmail.com", "shirese smith","password")
+
         ));
 
         assertThat(studentService.getAllStudents()).hasSameElementsAs(expected);

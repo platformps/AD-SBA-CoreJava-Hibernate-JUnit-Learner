@@ -1,5 +1,6 @@
 package sba.sms.utils;
 
+import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -11,6 +12,7 @@ public class HibernateUtil {
         // Utility classes should not have public constructors
     }
 
+    @Getter
     private static SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory()
@@ -32,10 +34,6 @@ public class HibernateUtil {
         } catch (Exception ex) {
             throw new ExceptionInInitializerError(ex);
         }
-    }
-
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
     }
 
     public static void shutdown() {
