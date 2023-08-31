@@ -21,7 +21,7 @@ class StudentServiceTest {
     @BeforeAll
     static void beforeAll() {
         studentService = new StudentService();
-      //  CommandLine.addData();
+        CommandLine.addData();
     }
 
     @Test

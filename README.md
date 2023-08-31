@@ -17,7 +17,6 @@ long as they are not already registered.
 - [Amazon Corretto 17 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) 
 - [Hibernate](https://mvnrepository.com/artifact/org.hibernate/hibernate-core)
 - [MySQL Connector Java](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.31)
-- [H2 database - tests](https://mvnrepository.com/artifact/com.h2database/h2)
 - [Project lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
 - [Junit jupiter api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)
 - [Junit jupiter engine](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine)
@@ -25,12 +24,16 @@ long as they are not already registered.
 - [Junit platform suite](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-engine)
 - [Junit platform runner](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner)
 
-### Demonstration to fork GitHub repository
-- click on `Fork`
-![fork_image](images/fork_image.png)
-- the action will duplicate the repository from the owner account
-to your own account, giving you the ability to clone the project 
-as the owner from your account. [More about forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
+### Demonstration to clone GitHub repository
+- click on `<> Code`
+![clone_image](images/clone.png)
+- Select HTTPS tab and copy the url 
+- Open Git Bash and change the working directory to the location where you want the project clone directory.
+- Type:  git clone and paste the url you copied earlier
+- Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
+- the action will copy an existing Git repository from the owner account
+into your current directory.  Your copy is completely isolated from the  original repository giving you the ability work on the your newly cloned 
+project.
 ---
 #### Requirement 1 - Models:
 Models requires:
