@@ -33,7 +33,7 @@ long as they are not already registered.
 - Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
 - This action will copy an existing Git repository from the owner account
 into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
-project independently.
+project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 #### Requirement 1 - Models:
 Models requires:
 - no args constructor 
