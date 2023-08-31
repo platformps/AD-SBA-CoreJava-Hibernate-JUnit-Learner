@@ -31,7 +31,7 @@ long as they are not already registered.
 - Open Git Bash and change the working directory to the location where you want the project clone directory.
 - Type:  git clone and paste the url you copied earlier
 - Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
-- the action will copy an existing Git repository from the owner account
+- This action will copy an existing Git repository from the owner account
 into your current directory.  Your copy is completely isolated from the  original repository giving you the ability work on the your newly cloned 
 project independently.
 #### Requirement 1 - Models:
