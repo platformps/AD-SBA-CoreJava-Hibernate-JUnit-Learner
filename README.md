@@ -32,7 +32,7 @@ long as they are not already registered.
 - Type:  git clone and paste the url you copied earlier
 - Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
 - This action will copy an existing Git repository from the owner account
-into your current directory.  Your copy is completely isolated from the  original repository giving you the ability work on the your newly cloned 
+into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
 project independently.
 #### Requirement 1 - Models:
 Models requires:
