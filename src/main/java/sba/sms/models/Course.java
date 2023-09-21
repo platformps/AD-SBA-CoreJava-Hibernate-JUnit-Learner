@@ -8,6 +8,13 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Course is a persistent class that represents (or maps to) a table
+ * name 'course' in the database. A Course object
+ * contains fields that represent course information
+ * and a student list that indicates the inverse
+ * relationship of its owner class.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor

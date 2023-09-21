@@ -13,7 +13,7 @@ import java.util.Scanner;
 /**
  * SBA Core Java Hibernate/Junit
  * Business Requirement:
- * task is to create a basic School Management System
+ * The task is to create a basic School Management System
  * where students can register for courses, and view the course assigned to them.
  *<br />
  * App uses <br />

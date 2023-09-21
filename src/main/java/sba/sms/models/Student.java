@@ -7,6 +7,15 @@ import lombok.experimental.FieldDefaults;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
+
+/**
+ * Student is a persistent class that represents (or maps to) a table
+ * name 'student' in the database. A Student object
+ * contains fields that represent student login credentials
+ * and a join table containing a registered student's
+ * email and course(s) data.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -30,9 +39,14 @@ public class Student {
     @JoinTable(name = "student_courses",
             joinColumns = @JoinColumn(name = "student_email"),
             inverseJoinColumns = @JoinColumn(name = "courses_id"))
-    //Set<Course> courses = new LinkedHashSet<>();
-     Set<Course> courses = new HashSet<>();  //LL HashSet better performance than LinkedHashSet - keeping track of each element is not necessary, therefore removed LinkedHashSet
+     Set<Course> courses = new HashSet<>();
 
+    /**
+     * Method takes-in a course object as an argument,
+     * adds it to course list, then adds
+     * the current student(this) object
+     * to the students list.
+     */
     public void addCourse(Course c){
         courses.add(c);
         c.getStudents().add(this);
