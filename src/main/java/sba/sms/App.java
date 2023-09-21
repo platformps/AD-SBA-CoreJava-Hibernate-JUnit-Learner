@@ -31,7 +31,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        CommandLine.addData();
+       CommandLine.addData();
 
         Scanner input = new Scanner(System.in);
         int userInput;
@@ -39,7 +39,7 @@ public class App {
             System.out.printf("Select # from menu:%n1.Student%n2.Quit%n");
             userInput = input.nextInt();
             if (userInput == 1) {
-                System.out.printf("Enter student email: ");
+                System.out.print("Enter student email: ");
                 String email = input.next();
                 System.out.printf("Enter %s's password: ", email.substring(0, email.indexOf("@")));
                 String password = input.next();
@@ -57,7 +57,7 @@ public class App {
                         for (Course course : courseList) {
                             System.out.printf("%-2d | %-20s | %s%n", course.getId(), course.getName(), course.getInstructor());
                         }
-                        System.out.printf("select course #: ");
+                        System.out.print("select course #: ");
                         int courseId = input.nextInt();
                         if (courseId > 0 && courseId <= courseList.size()) {
                             studentService.registerStudentToCourse(email, (courseId));

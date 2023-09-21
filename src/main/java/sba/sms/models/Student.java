@@ -4,10 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -27,11 +26,12 @@ public class Student {
     String password;
 
     @ToString.Exclude
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(name = "student_courses",
             joinColumns = @JoinColumn(name = "student_email"),
             inverseJoinColumns = @JoinColumn(name = "courses_id"))
-    Set<Course> courses = new LinkedHashSet<>();
+    //Set<Course> courses = new LinkedHashSet<>();
+     Set<Course> courses = new HashSet<>();  //LL HashSet better performance than LinkedHashSet - keeping track of each element is not necessary, therefore removed LinkedHashSet
 
     public void addCourse(Course c){
         courses.add(c);

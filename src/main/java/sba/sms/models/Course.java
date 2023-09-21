@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -28,8 +28,8 @@ public class Course {
     String instructor;
 
     @ToString.Exclude
-    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH},fetch = FetchType.EAGER)
-    private Set<Student> students = new LinkedHashSet<>();
+    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
+    private Set<Student> students = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

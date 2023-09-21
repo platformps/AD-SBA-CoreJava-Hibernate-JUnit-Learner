@@ -16,7 +16,7 @@ long as they are not already registered.
 
 - [Amazon Corretto 17 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) 
 - [Hibernate](https://mvnrepository.com/artifact/org.hibernate/hibernate-core)
-- [MySQL Connector Java](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.31)
+- [MySQL Connector Java](https://mvnrepository.com/artifact/mysql/mysql-connector-java)
 - [Project lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok)
 - [Junit jupiter api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)
 - [Junit jupiter engine](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine)
@@ -32,10 +32,10 @@ long as they are not already registered.
 - Type:  git clone and paste the url you copied earlier
 - Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
 - This action will copy an existing Git repository from the owner account
-into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
-project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
+- project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 #### Requirement 1 - Models:
-Models requires:
+Each Model requires:
 - no args constructor 
 - all args constructor
 - required args constructor
@@ -43,22 +43,22 @@ Models requires:
 - toString (exclude collections to avoid infinite loops)
 - override equals and hashcode methods (don't use lombok here)
 - helper methods
-##### Student (`@Table(name = "student")`):
-| Field    | Datatype      | Description                 | Database attributes `@Column()`                                                                                                                                                                       | 
-|----------|---------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
- | email    | String        | Student’s unique identifier | Primary key, 50 character limit, name `email`                                                                                                                                                         |
- | name     | String        | Student’s name              | 50 character limit, not null, name `name`                                                                                                                                                             |
- | password | String        | Student’s password          | 50 character limit not null, name `password`                                                                                                                                                          |
- | courses  | List\<Course> | Student courses list        | Join table strategy name `student_courses` , name of student primary key column `student_email` and inverse primary key (courses) column `courses_id` , fetch type `eager`, cascade all except remove |
+##### Student (`@Table(name = "student")`)
+| Field    | Datatype     | Description                 | Database attributes `@Column()`                                                                                                                                                                | 
+|----------|--------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+ | email    | String       | Student’s unique identifier | Primary key, 50 character limit, name `email`                                                                                                                                                  |
+ | name     | String       | Student’s name              | 50 character limit, not null, name `name`                                                                                                                                                      |
+ | password | String       | Student’s password          | 50 character limit not null, name `password`                                                                                                                                                   |
+ | courses  | Set\<Course> | Student courses list        | Join table strategy name `student_courses` , name of student primary key column `student_email` and inverse primary key (courses) column `courses_id` , fetch type `EAGER`, cascade type `ALL` |
 
 ##### Course (`@Table(name = "course")`):
 
-| Field      | Datatype       | Description              | Database attributes `@Column()`                                   | 
-|------------|----------------|--------------------------|-------------------------------------------------------------------|
-| id         | int            | Course unique identifier | Primary key                                                       |
-| name       | String         | Course name              | 50 character limit, not null                                      |
-| instructor | String         | Instructor name          | 50 character limit not null                                       |
-| students   | List\<Student> | Course learners list     | fetch type `eager`, cascade all except remove, mappedBy `courses` | 
+| Field      | Datatype      | Description              | Database attributes `@Column()`                            | 
+|------------|---------------|--------------------------|------------------------------------------------------------|
+| id         | int           | Course unique identifier | Primary key , generation type `IDENTITY`,                  |
+| name       | String        | Course name              | 50 character limit, not null                               |
+| instructor | String        | Instructor name          | 50 character limit not null                                |
+| students   | Set\<Student> | Course learners list     | fetch type `EAGER`, cascade type `ALL`, mappedBy `courses` | 
 
 ---
 #### Requirement 2 - Data Access Object  (dao) interfaces:
