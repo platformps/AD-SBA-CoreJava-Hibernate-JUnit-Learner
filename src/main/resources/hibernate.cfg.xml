@@ -11,7 +11,9 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/smsdb-ll?createDatabaseIfNotExist=true</property>
+
+        <!--Creates database, if it does not exist-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/smsdb?createDatabaseIfNotExist=true</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
 
