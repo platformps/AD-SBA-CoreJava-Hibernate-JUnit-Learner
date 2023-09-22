@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -35,11 +35,11 @@ public class Student {
     String password;
 
     @ToString.Exclude
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REMOVE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @JoinTable(name = "student_courses",
             joinColumns = @JoinColumn(name = "student_email"),
             inverseJoinColumns = @JoinColumn(name = "courses_id"))
-     Set<Course> courses = new HashSet<>();
+     Set<Course> courses = new LinkedHashSet<>();
 
     /**
      * Method takes-in a course object as an argument,

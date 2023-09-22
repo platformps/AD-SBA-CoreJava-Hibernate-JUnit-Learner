@@ -44,21 +44,21 @@ Each Model requires:
 - override equals and hashcode methods (don't use lombok here)
 - helper methods
 ##### Student (`@Table(name = "student")`)
-| Field    | Datatype     | Description                 | Database attributes `@Column()`                                                                                                                                                                | 
-|----------|--------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
- | email    | String       | Student’s unique identifier | Primary key, 50 character limit, name `email`                                                                                                                                                  |
- | name     | String       | Student’s name              | 50 character limit, not null, name `name`                                                                                                                                                      |
- | password | String       | Student’s password          | 50 character limit not null, name `password`                                                                                                                                                   |
- | courses  | Set\<Course> | Student courses list        | Join table strategy name `student_courses` , name of student primary key column `student_email` and inverse primary key (courses) column `courses_id` , fetch type `EAGER`, cascade type `ALL` |
+| Field    | Datatype     | Description                 | Database attributes `@Column()`                                                                                                                                                                                        | 
+|----------|--------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+ | email    | String       | Student’s unique identifier | Primary key, 50 character limit, name `email`                                                                                                                                                                          |
+ | name     | String       | Student’s name              | 50 character limit, not null, name `name`                                                                                                                                                                              |
+ | password | String       | Student’s password          | 50 character limit not null, name `password`                                                                                                                                                                           |
+ | courses  | Set\<Course> | Student courses list        | Join table strategy name `student_courses` , name of student primary key column `student_email` and inverse primary key (courses) column `courses_id` , fetch type `EAGER`, cascade type `DETACH,REMOVE,MERGE,PERSIST` |
 
 ##### Course (`@Table(name = "course")`):
 
-| Field      | Datatype      | Description              | Database attributes `@Column()`                            | 
-|------------|---------------|--------------------------|------------------------------------------------------------|
-| id         | int           | Course unique identifier | Primary key , generation type `IDENTITY`,                  |
-| name       | String        | Course name              | 50 character limit, not null                               |
-| instructor | String        | Instructor name          | 50 character limit not null                                |
-| students   | Set\<Student> | Course learners list     | fetch type `EAGER`, cascade type `ALL`, mappedBy `courses` | 
+| Field      | Datatype      | Description              | Database attributes `@Column()`                                                    | 
+|------------|---------------|--------------------------|------------------------------------------------------------------------------------|
+| id         | int           | Course unique identifier | Primary key , generation type `IDENTITY`,                                          |
+| name       | String        | Course name              | 50 character limit, not null                                                       |
+| instructor | String        | Instructor name          | 50 character limit not null                                                        |
+| students   | Set\<Student> | Course learners list     | fetch type `EAGER`, cascade type `DETACH,REMOVE,MERGE,PERSIST`, mappedBy `courses` | 
 
 ---
 #### Requirement 2 - Data Access Object  (dao) interfaces:
