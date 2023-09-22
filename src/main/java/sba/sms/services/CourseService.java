@@ -11,8 +11,17 @@ import sba.sms.utils.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * CourseService is a concrete class. This class implements the
+ * CourseI interface, overrides all abstract service methods and
+ * provides implementation for each method.
+ */
 public class CourseService implements CourseI {
+
+    /**
+     * Creates a course
+     * @param course
+     */
     @Override
     public void createCourse(Course course) {
         Session s = HibernateUtil.getSessionFactory().openSession();
@@ -30,6 +39,11 @@ public class CourseService implements CourseI {
         }
     }
 
+    /**
+     * Returns a valid course by courseId.
+     * @param courseId
+     * @return
+     */
     @Override
     public Course getCourseById(int courseId) {
         Session s = HibernateUtil.getSessionFactory().openSession();
@@ -51,6 +65,10 @@ public class CourseService implements CourseI {
     }
 
 
+    /**
+     * Returns a list of valid courses.
+     * @return
+     */
     @Override
     public List<Course> getAllCourses() {
         Session s = HibernateUtil.getSessionFactory().openSession();

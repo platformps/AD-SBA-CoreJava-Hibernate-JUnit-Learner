@@ -11,11 +11,10 @@ import java.util.Set;
 
 /**
  * Student is a POJO, configured as a persistent class that represents (or maps to) a table
- * name 'student' in the database. A Student object
- * contains fields that represent student login credentials
- * and a join table containing a registered student's
- * email and course(s) data. The Student class can be viewed as the
- * owner of the bi-directional relationship.
+ * name 'student' in the database. A Student object contains fields that represent student
+ * login credentials and a join table containing a registered student's email and course(s)
+ * data. The Student class can be viewed as the owner of the bi-directional relationship.
+ * Implement Lombok annotations to eliminate boilerplate code.
  */
 @NoArgsConstructor
 @AllArgsConstructor
@@ -47,6 +46,7 @@ public class Student {
      * adds it to course list, then adds
      * the current student(this) object
      * to the students list.
+     * @param c
      */
     public void addCourse(Course c){
         courses.add(c);

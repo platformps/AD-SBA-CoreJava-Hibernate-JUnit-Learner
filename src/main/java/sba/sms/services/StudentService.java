@@ -14,10 +14,20 @@ import sba.sms.utils.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * StudentService is a concrete class. This class implements the
+ * StudentI interface, overrides all abstract service methods and
+ * provides implementation for each method. Lombok @Log used to
+ * generate a logger file.
+ */
 @Log
 public class StudentService implements StudentI {
     private static final CourseService courseService = new CourseService();
 
+    /**
+     * Returns a list of students.
+     * @return
+     */
     @Override
     public List<Student> getAllStudents() {
         Session s = HibernateUtil.getSessionFactory().openSession();
@@ -37,6 +47,10 @@ public class StudentService implements StudentI {
         return studentList;
     }
 
+    /**
+     * Creates a student.
+     * @param student
+     */
     @Override
     public void createStudent(Student student) {
         Session s = HibernateUtil.getSessionFactory().openSession();
@@ -53,6 +67,11 @@ public class StudentService implements StudentI {
         }
     }
 
+    /**
+     * Returns a valid student by email.
+     * @param email
+     * @return student
+     */
     @Override
     public Student getStudentByEmail(String email) {
 
@@ -75,12 +94,24 @@ public class StudentService implements StudentI {
         return student;
     }
 
+    /**
+     * Validates student email and password; returns true if valid
+     * or false if not true.
+     * @param email
+     * @param password
+     * @return
+     */
     @Override
     public boolean validateStudent(String email, String password) {
         Student s = getStudentByEmail(email);
         return s != null && s.getPassword().equals(password);
     }
 
+    /**
+     * Registers student to a course.
+     * @param email
+     * @param courseId
+     */
     @Override
     public void registerStudentToCourse(String email, int courseId) {
 
@@ -103,7 +134,11 @@ public class StudentService implements StudentI {
 
     }
 
-
+    /**
+     * Returns a list of registered student courses.
+     * @param email
+     * @return courseList
+     */
     @Override
     public List<Course> getStudentCourses(String email) {
         Session s = HibernateUtil.getSessionFactory().openSession();

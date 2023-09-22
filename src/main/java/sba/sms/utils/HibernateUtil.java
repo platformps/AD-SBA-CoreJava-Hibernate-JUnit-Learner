@@ -7,14 +7,29 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+/**
+ * HibernateUtil is a session factory helper class that builds a
+ * secure connection to a database and permits CRUD operations on a table.
+ * The session configuration derives from the hibernate.cfg.xml file in
+ * the 'resources' folder.
+ */
 public class HibernateUtil {
     private HibernateUtil() {
         // Utility classes should not have public constructors
     }
 
+    /**
+     * @Getter builds a standard getter method for the object
+     * sessionFactory.
+     */
     @Getter
     private static SessionFactory sessionFactory = buildSessionFactory();
 
+    /**
+     * Method builds a session factory from the 'hibernate.cfg.xml' file
+     * in the 'resources' folder and returns a sessionFactory object.
+     * @return
+     */
     private static SessionFactory buildSessionFactory()
     {
         try
@@ -36,6 +51,9 @@ public class HibernateUtil {
         }
     }
 
+    /**
+     * Closes the session factory.
+     */
     public static void shutdown() {
         getSessionFactory().close();
     }
