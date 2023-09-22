@@ -30,7 +30,7 @@ long as they are not already registered.
 - Select HTTPS tab and copy the url 
 - Open Git Bash and change the working directory to the location where you want the project clone directory.
 - Type:  git clone and paste the url you copied earlier
-- Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit.git
+- Example:  git clone https://github.com/platformps/AD-SBA-Core-Java-Hibernate-JUnit-learner-version.git
 - This action will copy an existing Git repository from the owner account
 - into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
 - project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
