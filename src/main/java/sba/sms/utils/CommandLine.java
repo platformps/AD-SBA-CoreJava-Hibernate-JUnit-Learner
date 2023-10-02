@@ -20,8 +20,17 @@ public class CommandLine {
     /**
      * Creates and persist student object to the 'student' table and
      * course objects to the 'course' table
+     *
+     * <b style="color:red">ATTENTION PLEASE READ</b>
+     * Uncomment the following code after crating both models and entities for ease of adding and dropping dummy data into the database, remember that
+     * in hibernate.cfg.xml <code>hibernate.hbm2ddl.auto = create-drop </code> will create and drop the tables every time the application
+     * re-runs.
+     *
+     *
      */
     public static void addData(){
+        /*
+
         StudentService studentService = new StudentService();
         CourseService courseService = new CourseService();
         studentService.createStudent(new Student("reema@gmail.com", "reema brown", PASSWORD));
@@ -40,6 +49,6 @@ public class CommandLine {
         courseService.createCourse(new Course("Web Services", "Raheem Abolfathzadeh"));
         courseService.createCourse(new Course("Microservices", "Eric Heilig"));
 
-
+        */
     }
 }

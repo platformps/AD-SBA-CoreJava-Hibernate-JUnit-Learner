@@ -21,9 +21,14 @@ import java.util.Scanner;
  * Two models: {@link Student} & {@link Course} <br />
  * Two services: {@link StudentService} & {@link CourseService}
  *
- * @author  Jafer Alhaboubi
+ *
+ * <b style="color:red">WARNING! </b>
+ * <b>DO NOT MODIFY THIS CODE</b>
+ *
+ * @author  Jafer Alhaboubi & LaTonya Lewis
  * @since sba-core-java-hibernate-junit 1.0
  */
+
 @Log
 public class App {
     static final  StudentService studentService = new StudentService();
