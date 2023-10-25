@@ -12,6 +12,11 @@ Valid students are able to see the courses they are registered for.
 Valid students are able to register for any course in the system as
 long as they are not already registered.
 
+### Submission Guideline
+After completing all of the tasks or requirements, show it to the instructor and convert your project into a zip file. Upload the zip file to Canvas. 
+**(NOTE: Do not upload / push on github)**
+
+
 ### Maven Project Requirements:
 
 - [Amazon Corretto 17 JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html) 
