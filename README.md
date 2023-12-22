@@ -69,8 +69,8 @@ Each Model class requires:
 #### Requirement 2 - Data Access Object  (dao) interfaces:
 
 ##### StudentI:
-- You can **NOT** add more methods in the interfaces than the definition below. 
-- Please include the proper method signature based on the Student table.
+- You can **NOT** add more methods in the interfaces than the definition below.
+  
 | Abstract method         | Return type    | Parameters                    | Description                                                                                                     | 
 |-------------------------|----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | createStudent           | void           | Student                       | persist student to database, also handle commit,rollback, and exceptions                                        |
