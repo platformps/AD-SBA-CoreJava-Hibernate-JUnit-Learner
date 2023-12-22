@@ -36,18 +36,19 @@ After completing all of the tasks or requirements, show it to the instructor and
 - Open Git Bash and change the working directory to the location where you want the project clone directory.
 - Type:  git clone and paste the url you copied earlier
 - Example:  git clone https://github.com/platformps/AD-SBA-CoreJava-Hibernate-JUnit-Learner.git
-- This action will copy an existing Git repository from the owner account
-- into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
+- This action will copy an existing Git repository from the owner account into your current local directory. Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
 - project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 #### Requirement 1 - Models:
-Each Model class requires: 
-- no args constructor 
-- all args constructor
-- required args constructor
-- setters and getter
-- toString (exclude collections to avoid infinite loops)
-- override equals and hashcode methods (don't use lombok here)
-- helper methods
+-In the Project you have two **Model** classes named **Student.java** and **Course.java** under **Model** package.
+
+- Each Model class **requires**: 
+ - no args constructor
+ - all args constructor
+ - required args constructor
+ - setters and getter
+ - toString (exclude collections to avoid infinite loops)
+ - override equals and hashcode methods (don't use lombok here)
+ - helper method
 ##### Student (`@Table(name = "student")`)
 | Field    | Datatype     | Description                 | Database attributes `@Column()`                                                                                                                                                                                        | 
 |----------|--------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
