@@ -39,9 +39,8 @@ After completing all of the tasks or requirements, show it to the instructor and
 - This action will copy an existing Git repository from the owner account into your current local directory. Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
 - project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 #### Requirement 1 - Models:
-- In the Project you have two **Model** classes named **Student.java** and **Course.java** under **Model** package.
-
-- Each Model class **requires**: 
+In the Project you have two **Model** classes named **Student.java** and **Course.java** under **Model** package.
+Each Model class **requires**: 
  - no args constructor
  - all args constructor
  - required args constructor
