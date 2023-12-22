@@ -40,7 +40,7 @@ After completing all of the tasks or requirements, show it to the instructor and
 - into your current local directory.  Your copy is completely isolated from the  original repository giving you the ability work on the newly cloned 
 - project independently.  [More about clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 #### Requirement 1 - Models:
-Each Model requires:
+Each Model class requires: 
 - no args constructor 
 - all args constructor
 - required args constructor
@@ -69,6 +69,8 @@ Each Model requires:
 #### Requirement 2 - Data Access Object  (dao) interfaces:
 
 ##### StudentI:
+- You can **NOT** add more methods in the interfaces than the definition below. 
+- Please include the proper method signature based on the Student table.
 | Abstract method         | Return type    | Parameters                    | Description                                                                                                     | 
 |-------------------------|----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | createStudent           | void           | Student                       | persist student to database, also handle commit,rollback, and exceptions                                        |
