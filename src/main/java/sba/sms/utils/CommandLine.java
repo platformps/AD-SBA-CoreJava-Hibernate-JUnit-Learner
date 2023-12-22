@@ -22,7 +22,7 @@ public class CommandLine {
      * course objects to the 'course' table
      *
      * <b style="color:red">ATTENTION PLEASE READ</b>
-     * Uncomment the following code after crating both models and entities for ease of adding and dropping dummy data into the database, remember that
+     * Uncomment the following code after creating both models and entities for ease of adding and dropping dummy data into the database, remember that
      * in hibernate.cfg.xml <code>hibernate.hbm2ddl.auto = create-drop </code> will create and drop the tables every time the application
      * re-runs.
      *
