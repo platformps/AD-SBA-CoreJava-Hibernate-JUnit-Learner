@@ -1,4 +1,4 @@
-# AD - SBA - Core Java/Hibernate/JUnit - Instructor Version
+# AD - SBA - Core Java/Hibernate/JUnit - Learner Version
 
 ## School Management System
 ### Business Requirement:
