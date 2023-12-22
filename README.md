@@ -90,6 +90,8 @@ Each Model class requires:
 | getCourseById           | Course        | int courseId                  | return course if exists, also handle commit,rollback, and exceptions                                            |
 ---
 #### Requirement 3 - Service layer:
+The classes listed below are concrete classes. The following class implements the **StudentI** and **CourseI** interfaces, as well as overrides and implements all abstract service methods.
+
 implement interfaces:
 - StudentService
 - CourseService
