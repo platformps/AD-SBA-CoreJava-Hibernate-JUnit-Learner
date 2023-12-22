@@ -81,6 +81,8 @@ Each Model class requires:
 | getStudentCourses       | List\<Course>  | String email                  | get all the student courses list (use native query), also handle commit,rollback, and exceptions                | 
 
 ##### CourseI:
+- You can **NOT** add more methods in the interfaces than the definition below.
+  
 | Abstract method         | Return type   | Parameters                    | Description                                                                                                     | 
 |-------------------------|---------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | createCourse            | void          | Course                        | persist course to database, also handle commit,rollback, and exceptions                                         |
