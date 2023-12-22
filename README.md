@@ -97,8 +97,9 @@ implement interfaces:
 - CourseService
 ---
 #### Requirement 4 - Utility classes:
-- hibernate configuration session factory helper
-- data initializer helper (dummy data dump)
+- HibernateUtil.java - hibernate configuration session factory helper
+- CommandLine.java - data initializer helper (dummy data dump).
+- Configuration file (hibernate.cfg.xml) can be found under *src/main/resources/*
 ---
 #### Requirement 5 - JUnit:
 - Write at least one junit test
