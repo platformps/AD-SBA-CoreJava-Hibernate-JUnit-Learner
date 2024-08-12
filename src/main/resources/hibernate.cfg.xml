@@ -6,8 +6,9 @@
     <session-factory>
 
         <!-- MySQL Database -->
+
         <!-- Drop and re-create the database on startup -->
-        <property name="hibernate.hbm2ddl.auto"> create-drop </property>
+        <property name="hibernate.hbm2ddl.auto"> create-drop</property>
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -15,13 +16,14 @@
         <!--Creates database, if it does not exist-->
         <property name="connection.url">jdbc:mysql://localhost:3306/smsdb-ll?createDatabaseIfNotExist=true</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
+        <property name="connection.password">password</property>
 
         <!-- MySQL DB dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- print all executed SQL on console -->
-        <!--<property name="hibernate.show_sql" >true </property>-->
-        <!-- <property name="hibernate.format_sql" >true </property>-->
+<!--        <property name="hibernate.show_sql" >true </property>-->
+<!--         <property name="hibernate.format_sql" >true </property>-->
+
 
         <!--   Mapping entity file -->
         <mapping class="sba.sms.models.Student"/>

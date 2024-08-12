@@ -1,5 +1,7 @@
 package sba.sms.utils;
 
+
+
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -12,7 +14,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  * secure connection to a database and permits CRUD operations on a table.
  * The session configuration derives from the hibernate.cfg.xml file in
  * the 'resources' folder.
- *
+
  *  <b style="color:red">WARNING! </b>
  *  <b>DO NOT MODIFY THIS CODE</b>
  */
@@ -22,16 +24,19 @@ public class HibernateUtil {
     }
 
     /**
-     * @Getter builds a standard getter method for the object
+     * Getter builds a standard getter method for the object
      * sessionFactory.
      */
+
+
     @Getter
     private static SessionFactory sessionFactory = buildSessionFactory();
+
 
     /**
      * Method builds a session factory from the 'hibernate.cfg.xml' file
      * in the 'resources' folder and returns a sessionFactory object.
-     * @return
+     * return
      */
     private static SessionFactory buildSessionFactory()
     {
